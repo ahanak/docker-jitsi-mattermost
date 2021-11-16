@@ -12,6 +12,7 @@
 cp env.example .env
 vi .env
 ./setup.sh
+docker-compose up -d
 ```
 
 ## Updates
