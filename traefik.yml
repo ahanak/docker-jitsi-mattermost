@@ -1,0 +1,37 @@
+entryPoints:
+  web:
+    address: ":80"
+    http:
+      redirections:
+        entryPoint:
+          to: websecure
+          scheme: https
+
+  websecure:
+    address: ":443"
+    http:
+      tls:
+        certresolver: le
+providers:
+  #providersThrottleDuration: 2s
+  docker:
+    exposedByDefault: false
+    #network: traefik_web
+    #defaultRule: 'Host(`{{regexReplaceAll "^[^-]+-" .Name ""}}.jupiter.doomcom.de`) {{if .Labels.domain }} || Host(`{{ .Labels.domain }}`){{end}}'
+    #swarmModeRefreshSeconds: 15s
+
+  file:
+    directory: /config
+
+api:
+  dashboard: true
+  insecure: true
+certificatesResolvers:
+  le:
+    acme:
+      #email: your-email@example.com
+      storage: /data/acme.json
+      httpChallenge:
+        # used during the challenge
+        entryPoint: web
+
