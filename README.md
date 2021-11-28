@@ -1,5 +1,10 @@
 # Jitsi + Mattermost Docker-Compose setup
 
+This is an example, how a docker-compose setup could look like for
+* [Jitsi](https://jitsi.org/) video conferences
+* [Mattermost](https://mattermost.com/) team chat
+* [Traefik2](https://traefik.io/) as frontend webserver including let's enrypt
+
 ## Setup Guide
 
 ### Dependencies
