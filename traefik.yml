@@ -16,9 +16,6 @@ providers:
   #providersThrottleDuration: 2s
   docker:
     exposedByDefault: false
-    #network: traefik_web
-    #defaultRule: 'Host(`{{regexReplaceAll "^[^-]+-" .Name ""}}.jupiter.doomcom.de`) {{if .Labels.domain }} || Host(`{{ .Labels.domain }}`){{end}}'
-    #swarmModeRefreshSeconds: 15s
 
   file:
     directory: /config
